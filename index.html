@@ -1335,11 +1335,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       </div>
     </div>
 
-    <form class="contact-form" id="contactForm" action="https://formsubmit.co/adir.mamou@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="פניה חדשה מאתר CDS פרויקטים">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="#contact-success">
+    <form class="contact-form" id="contactForm">
       <input type="text" name="_honey" style="display:none">
 
       <div class="form-head">
@@ -1502,9 +1498,22 @@ document.querySelectorAll('.service-card, .client-card, .gallery-item, .about-fe
 // ===== Form submission feedback =====
 const form = document.getElementById('contactForm');
 if (form) {
-  form.addEventListener('submit', () => {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    data.append('_subject', 'פניה חדשה מאתר CDS פרויקטים');
+    data.append('_template', 'table');
+    data.append('_captcha', 'false');
+    try {
+      await fetch('https://formsubmit.co/ajax/adir.mamou@gmail.com', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+    } catch (_) {}
+    form.reset();
     const success = document.getElementById('contact-success');
-    setTimeout(() => { if (success) success.classList.add('is-visible'); }, 100);
+    if (success) success.classList.add('is-visible');
   });
 }
 
