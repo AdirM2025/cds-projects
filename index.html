@@ -1,0 +1,1565 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CDS פרויקטים — ארונות פח ושילוט לבניינים</title>
+<meta name="description" content="CDS פרויקטים — חברה מובילה בתחום ארונות הפח, השילוט והרפפות לבניינים בישראל. ייעוץ, אספקה והתקנה ברמה הגבוהה ביותר.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Frank+Ruhl+Libre:wght@500;700;900&display=swap">
+<link rel="icon" href="assets/logo.jpg">
+<style>
+@font-face {
+  font-family: 'VarelaRound';
+  src: url('uploads/VarelaRound-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+/* ===== CDS PROJECTS — STYLES ===== */
+:root {
+  --bg: #0a0a0a;
+  --bg-2: #14130f;
+  --bg-3: #1c1a14;
+  --bg-card: #1a1813;
+  --bg-light: #f5f1e8;
+  --bg-light-2: #ebe6d8;
+  --gold: #c9a04e;
+  --gold-bright: #e6c478;
+  --gold-deep: #9d7a32;
+  --ink: #14130f;
+  --ink-2: #2c2a23;
+  --muted: #8a8578;
+  --muted-light: #b8b3a3;
+  --line: rgba(201, 160, 78, 0.18);
+  --line-light: rgba(20, 19, 15, 0.08);
+  --shadow: 0 24px 60px -20px rgba(0,0,0,0.6);
+  --radius: 14px;
+  --radius-sm: 8px;
+  --container: 1280px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: 'Heebo', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--bg-light);
+  line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+
+.container { max-width: var(--container); margin: 0 auto; padding: 0 32px; }
+.gold { color: var(--gold); }
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: var(--radius-sm);
+  transition: all .25s ease;
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+}
+.btn-lg { padding: 16px 30px; font-size: 16px; }
+.btn-block { width: 100%; justify-content: center; padding: 18px; font-size: 17px; }
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold) 60%, var(--gold-deep) 100%);
+  color: var(--ink);
+  box-shadow: 0 8px 24px -8px rgba(201,160,78,0.5), inset 0 1px 0 rgba(255,255,255,0.3);
+}
+.btn-gold:hover { transform: translateY(-2px); box-shadow: 0 14px 30px -10px rgba(201,160,78,0.7), inset 0 1px 0 rgba(255,255,255,0.4); }
+.btn-ghost {
+  border: 1px solid var(--line);
+  color: var(--bg-light);
+  background: rgba(255,255,255,0.02);
+}
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ===== Top bar ===== */
+.topbar {
+  background: #050505;
+  border-bottom: 1px solid rgba(201,160,78,0.1);
+  font-size: 13px;
+  color: var(--muted-light);
+}
+.topbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 32px;
+  max-width: var(--container);
+  margin: 0 auto;
+}
+.topbar-contact { display: flex; align-items: center; gap: 16px; }
+.topbar-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted-light);
+  transition: color .2s;
+}
+.topbar-link:hover { color: var(--gold); }
+.topbar-divider { width: 1px; height: 14px; background: rgba(201,160,78,0.2); }
+.topbar-tag { color: var(--gold); font-weight: 500; letter-spacing: 0.02em; }
+
+/* ===== Header ===== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line);
+  transition: background .3s;
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 32px;
+  max-width: var(--container);
+  margin: 0 auto;
+  gap: 24px;
+}
+.logo { display: flex; align-items: center; gap: 12px; }
+.logo img { width: 44px; height: 44px; border-radius: 8px; object-fit: cover; }
+.logo-name {
+  font-family: 'VarelaRound', sans-serif;
+  font-weight: 700;
+  font-size: 19px;
+  color: var(--bg-light);
+  letter-spacing: 0.02em;
+}
+.logo-sub { font-size: 11px; color: var(--gold); letter-spacing: 0.05em; font-weight: 500; }
+
+.nav { display: flex; gap: 6px; }
+.nav a {
+  padding: 8px 14px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--muted-light);
+  border-radius: 6px;
+  transition: all .2s;
+}
+.nav a:hover { color: var(--gold); background: rgba(201,160,78,0.06); }
+
+.header-cta { display: flex; align-items: center; gap: 12px; }
+.menu-toggle {
+  display: none;
+  width: 40px;
+  height: 40px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.menu-toggle span {
+  width: 22px;
+  height: 2px;
+  background: var(--bg-light);
+  transition: .3s;
+}
+
+/* ===== Hero ===== */
+.hero {
+  position: relative;
+  padding: 80px 0 100px;
+  overflow: hidden;
+  isolation: isolate;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(201,160,78,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,160,78,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, #000, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, #000, transparent 80%);
+}
+.hero-glow {
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(201,160,78,0.15) 0%, transparent 60%);
+  filter: blur(40px);
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+
+.hero-title {
+  font-family: 'VarelaRound', sans-serif;
+  font-size: clamp(40px, 6vw, 76px);
+  line-height: 1.05;
+  font-weight: 700;
+  margin-top: 22px;
+  letter-spacing: -0.02em;
+  color: var(--bg-light);
+  text-wrap: balance;
+}
+.hero-lede {
+  font-size: 19px;
+  color: var(--muted-light);
+  max-width: 540px;
+  margin-top: 22px;
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+.hero-actions { display: flex; gap: 12px; margin-top: 36px; flex-wrap: wrap; }
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-top: 60px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+.stat-num {
+  font-family: 'VarelaRound', sans-serif;
+  font-size: 32px;
+  color: var(--gold);
+  font-weight: 700;
+  line-height: 1;
+}
+.stat-num span { font-size: 14px; color: var(--muted-light); margin-right: 6px; font-family: 'Heebo', sans-serif; font-weight: 500; }
+.stat-label { font-size: 13px; color: var(--muted); margin-top: 4px; }
+.stat-divider { width: 1px; height: 36px; background: var(--line); }
+
+/* Hero visual */
+.hero-visual {
+  position: relative;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-shield {
+  position: relative;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, rgba(201,160,78,0.15) 0%, transparent 70%);
+}
+.hero-shield::before {
+  content: '';
+  position: absolute;
+  inset: -40px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  animation: spin 30s linear infinite;
+}
+.hero-shield::after {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  border: 1px dashed rgba(201,160,78,0.15);
+  animation: spin 40s linear infinite reverse;
+}
+.hero-shield img {
+  width: 320px;
+  height: 320px;
+  object-fit: contain;
+  filter: drop-shadow(0 30px 60px rgba(201,160,78,0.3));
+  position: relative;
+  z-index: 1;
+}
+@keyframes spin { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+
+.hero-card {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: rgba(28, 26, 20, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+}
+.hero-card-1 { top: 20px; right: -10px; animation: float 4s ease-in-out infinite; }
+.hero-card-2 { bottom: 30px; left: -10px; animation: float 4s ease-in-out infinite 2s; }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+.hero-card-icon {
+  width: 38px; height: 38px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(201,160,78,0.15);
+  color: var(--gold);
+  flex-shrink: 0;
+}
+.hero-card-title { font-size: 14px; font-weight: 600; color: var(--bg-light); }
+.hero-card-sub { font-size: 12px; color: var(--muted); }
+
+/* ===== Marquee strip ===== */
+.strip {
+  background: var(--gold);
+  color: var(--ink);
+  overflow: hidden;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.strip-inner {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 14px 0;
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  animation: marquee 40s linear infinite;
+  width: max-content;
+}
+.strip .dot { font-size: 8px; opacity: 0.5; }
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(50%); }
+}
+
+/* ===== Sections ===== */
+.section {
+  padding: 110px 0;
+  background: var(--bg-light);
+  color: var(--ink);
+  position: relative;
+}
+.section-dark {
+  background: var(--bg-2);
+  color: var(--bg-light);
+}
+
+.section-head { max-width: 900px; margin-bottom: 60px; }
+.section-head-center { margin: 0 auto 60px; text-align: center; }
+.section-title {
+  font-family: 'VarelaRound', sans-serif;
+  font-size: clamp(34px, 4.5vw, 52px);
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-top: 16px;
+  text-wrap: balance;
+}
+.section-lede {
+  font-size: 19px;
+  color: var(--ink-2);
+  margin-top: 20px;
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+.section-dark .section-lede { color: var(--muted-light); }
+
+/* ===== Services ===== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.service-card {
+  background: #fff;
+  border: 1px solid var(--line-light);
+  border-radius: var(--radius);
+  padding: 36px 32px;
+  position: relative;
+  transition: all .3s ease;
+  overflow: hidden;
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0;
+  transition: opacity .3s;
+}
+.service-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  box-shadow: 0 30px 60px -30px rgba(201,160,78,0.3);
+}
+.service-card:hover::before { opacity: 1; }
+.service-card-feature {
+  background: linear-gradient(165deg, var(--ink) 0%, #1f1c15 100%);
+  color: var(--bg-light);
+  border-color: var(--gold);
+}
+.service-card-feature::before { opacity: 1; }
+.service-card-feature .service-num { color: var(--gold); }
+.service-num {
+  font-family: 'VarelaRound', sans-serif;
+  font-size: 56px;
+  color: var(--gold);
+  opacity: 0.3;
+  line-height: 1;
+  font-weight: 700;
+  position: absolute;
+  top: 20px;
+  left: 28px;
+}
+.service-icon {
+  width: 64px; height: 64px;
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(201,160,78,0.12);
+  color: var(--gold);
+  margin-bottom: 28px;
+}
+.service-card h3 {
+  font-family: 'VarelaRound', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.service-card p {
+  font-size: 15px;
+  color: var(--ink-2);
+  line-height: 1.65;
+  margin-bottom: 22px;
+}
+.service-card-feature p { color: var(--muted-light); }
+.service-list { list-style: none; display: flex; flex-direction: column; gap: 8px; padding-top: 20px; border-top: 1px solid var(--line-light); }
+.service-card-feature .service-list { border-color: var(--line); }
+.service-list li {
+  position: relative;
+  padding-right: 22px;
+  font-size: 14px;
+  color: var(--ink-2);
+}
+.service-card-feature .service-list li { color: var(--bg-light); }
+.service-list li::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  border-right: 2px solid var(--gold);
+  border-bottom: 2px solid var(--gold);
+  transform: rotate(-45deg) translateY(-2px);
+}
+
+/* ===== About ===== */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 80px;
+  align-items: center;
+}
+.about-visual { position: relative; }
+.about-frame {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.about-frame-shape {
+  aspect-ratio: 4/5;
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+.about-frame-shape svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.about-frame-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+}
+
+.about-text {
+  font-size: 17px;
+  color: var(--muted-light);
+  margin-top: 22px;
+  line-height: 1.75;
+  text-wrap: pretty;
+}
+.about-features {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+.about-feature { display: flex; align-items: flex-start; gap: 12px; }
+.about-feature-icon {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: rgba(201,160,78,0.15);
+  color: var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.about-feature-title { font-weight: 600; font-size: 16px; color: var(--bg-light); }
+.about-feature-sub { font-size: 14px; color: var(--muted); margin-top: 2px; }
+
+/* ===== Gallery ===== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 280px;
+  gap: 16px;
+}
+.gallery-item {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line-light);
+  cursor: pointer;
+  transition: transform .35s ease, border-color .25s;
+}
+.gallery-item:hover { transform: translateY(-4px); border-color: var(--gold); }
+.gallery-item-tall { grid-row: span 2; }
+.gallery-item-wide { grid-column: span 2; }
+.gallery-shape { position: absolute; inset: 0; }
+.gallery-shape svg { width: 100%; height: 100%; display: block; }
+.gallery-item figcaption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 18px 22px;
+  background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.gallery-tag {
+  font-size: 12px;
+  color: var(--gold);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.gallery-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--bg-light);
+}
+.gallery-note {
+  margin-top: 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border: 1px dashed var(--line-light);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  color: var(--muted);
+  background: rgba(20,19,15,0.03);
+}
+
+/* ===== Clients ===== */
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 18px;
+}
+.client-card {
+  aspect-ratio: 1.4 / 1;
+  background: #fff;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 26px;
+  border: 1px solid var(--line);
+  transition: all .3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.client-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  transition: border-color .25s;
+  pointer-events: none;
+}
+.client-card:hover { transform: translateY(-3px); }
+.client-card:hover::after { border-color: var(--gold); }
+.client-card img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+.client-card-dark { background: #0f0f0f; }
+.client-card-idf { background: #1a2535; }
+.client-card-landover { background: #2e5a1a; }
+.client-card-burgundy { background: #6b1f2c; }
+
+/* ===== Contact ===== */
+.section-contact {
+  background: linear-gradient(180deg, var(--bg-light) 0%, #ebe5d5 100%);
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 80px;
+  align-items: start;
+}
+.contact-lede {
+  font-size: 17px;
+  color: var(--ink-2);
+  margin-top: 20px;
+  line-height: 1.7;
+}
+.contact-channels {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.contact-channel {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: #fff;
+  border: 1px solid var(--line-light);
+  border-radius: var(--radius);
+  transition: all .25s;
+}
+.contact-channel:hover {
+  border-color: var(--gold);
+  transform: translateX(-4px);
+  box-shadow: 0 10px 30px -15px rgba(201,160,78,0.3);
+}
+.contact-channel-icon {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(201,160,78,0.12);
+  color: var(--gold-deep);
+  flex-shrink: 0;
+}
+.contact-channel-wa { background: #25D366; color: #fff; }
+.contact-channel-fb { background: #1877F2; color: #fff; }
+.contact-channel-label { font-size: 13px; color: var(--muted); font-weight: 500; }
+.contact-channel-value { font-size: 16px; font-weight: 600; color: var(--ink); margin-top: 2px; }
+
+.contact-form {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 40px;
+  box-shadow: 0 30px 80px -30px rgba(20,19,15,0.2);
+  border: 1px solid var(--line-light);
+}
+.form-head { margin-bottom: 28px; padding-bottom: 24px; border-bottom: 1px solid var(--line-light); }
+.form-head h3 {
+  font-family: 'VarelaRound', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.form-head p { color: var(--ink-2); font-size: 15px; }
+
+.form-row { margin-bottom: 16px; }
+.form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px; }
+.field { display: block; }
+.field-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-2);
+  margin-bottom: 6px;
+}
+.field-label em { color: #c0392b; font-style: normal; }
+.field input, .field select, .field textarea {
+  width: 100%;
+  padding: 13px 16px;
+  background: #faf8f1;
+  border: 1.5px solid #e6dfca;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--ink);
+  transition: all .2s;
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: none;
+  background: #fff;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(201,160,78,0.1);
+}
+.field textarea { resize: vertical; min-height: 100px; font-family: inherit; }
+.field select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='%238a8578' d='M6 8 0 0h12z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: left 16px center;
+  padding-left: 40px;
+}
+
+.form-success {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+  padding: 14px 18px;
+  background: rgba(46, 204, 113, 0.1);
+  border: 1px solid rgba(46, 204, 113, 0.3);
+  border-radius: 8px;
+  color: #1e8449;
+  font-weight: 500;
+}
+.form-success.is-visible { display: flex; }
+.form-hint {
+  margin-top: 14px;
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* ===== Footer ===== */
+.footer {
+  background: #050505;
+  color: var(--muted-light);
+  padding-top: 70px;
+}
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 60px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid var(--line);
+}
+.footer-brand { display: flex; align-items: center; gap: 14px; }
+.footer-brand img { width: 56px; height: 56px; border-radius: 8px; object-fit: cover; }
+.footer-name {
+  font-family: 'VarelaRound', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--bg-light);
+}
+.footer-tag { font-size: 13px; color: var(--gold); margin-top: 4px; }
+.footer-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.footer-col { display: flex; flex-direction: column; gap: 10px; }
+.footer-col h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.footer-col a, .footer-col span { font-size: 14px; color: var(--muted-light); transition: color .2s; }
+.footer-col a:hover { color: var(--gold); }
+.footer-bottom {
+  padding: 20px 0;
+  font-size: 13px;
+}
+.footer-bottom-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--muted);
+}
+
+/* ===== Floating WhatsApp ===== */
+.float-wa {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 30px -8px rgba(37, 211, 102, 0.5), 0 0 0 8px rgba(37, 211, 102, 0.15);
+  z-index: 100;
+  transition: transform .25s;
+  animation: wa-pulse 2.5s ease-in-out infinite;
+}
+.float-wa:hover { transform: scale(1.08); }
+@keyframes wa-pulse {
+  0%, 100% { box-shadow: 0 12px 30px -8px rgba(37, 211, 102, 0.5), 0 0 0 0 rgba(37, 211, 102, 0.4); }
+  50% { box-shadow: 0 12px 30px -8px rgba(37, 211, 102, 0.5), 0 0 0 14px rgba(37, 211, 102, 0); }
+}
+
+/* ===== Hero logo: circular crop + blend removes gray JPG background ===== */
+.hero-shield img {
+  border-radius: 50%;
+  mix-blend-mode: multiply;
+}
+
+/* ===== Gallery real media ===== */
+.gallery-item img, .gallery-item video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.gallery-item img { cursor: zoom-in; }
+.gallery-item-full { grid-column: span 3; }
+
+/* ===== Gallery video play button ===== */
+.gallery-video-item { cursor: pointer; }
+.gallery-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 74px; height: 74px;
+  border-radius: 50%;
+  background: rgba(201,160,78,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  pointer-events: none;
+  transition: transform .25s, background .25s;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+}
+.gallery-video-item:hover .gallery-play-btn {
+  transform: translate(-50%, -50%) scale(1.12);
+  background: var(--gold-bright);
+}
+
+/* ===== About section real photo ===== */
+.about-frame-shape img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+/* ===== Lightbox & Video modal ===== */
+.lightbox, .video-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0,0,0,0.93);
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.lightbox.is-open, .video-modal.is-open { display: flex; }
+.lightbox-media {
+  max-width: min(92vw, 1400px);
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.7);
+  cursor: default;
+}
+.video-modal video {
+  max-width: min(92vw, 1200px);
+  max-height: 85vh;
+  border-radius: 8px;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.7);
+}
+.lightbox-close, .modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: #fff;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background .2s;
+}
+.lightbox-close:hover, .modal-close:hover { background: rgba(255,255,255,0.26); }
+
+/* ===== Responsive ===== */
+@media (max-width: 980px) {
+  .hero-inner, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 50px; }
+  .hero-visual { height: 380px; }
+  .hero-shield { width: 280px; height: 280px; }
+  .hero-shield img { width: 230px; height: 230px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 220px; }
+  .clients-grid { grid-template-columns: repeat(3, 1fr); }
+  .footer-inner { grid-template-columns: 1fr; gap: 40px; }
+  .nav { display: none; position: absolute; top: 100%; right: 0; left: 0; background: var(--bg-2); flex-direction: column; padding: 16px; border-bottom: 1px solid var(--line); }
+  .nav.is-open { display: flex; }
+  .menu-toggle { display: flex; }
+  .topbar-tag { display: none; }
+  .section { padding: 70px 0; }
+  .container { padding: 0 22px; }
+  .topbar-inner { padding: 8px 22px; }
+  .header-inner { padding: 12px 22px; }
+}
+@media (max-width: 600px) {
+  .hero-stats { flex-wrap: wrap; gap: 16px; }
+  .stat-divider { display: none; }
+  .form-row-2 { grid-template-columns: 1fr; }
+  .footer-cols { grid-template-columns: 1fr 1fr; }
+  .gallery-item-wide { grid-column: span 2; }
+  .clients-grid { grid-template-columns: repeat(2, 1fr); }
+  .contact-form { padding: 28px 22px; }
+  .topbar-contact { gap: 10px; font-size: 12px; }
+  .footer-bottom-inner { flex-direction: column; gap: 8px; text-align: center; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ===== TOP BAR ===== -->
+<div class="topbar">
+  <div class="container topbar-inner">
+    <div class="topbar-contact">
+      <a href="mailto:cdsprojects1@gmail.com" class="topbar-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        cdsprojects1@gmail.com
+      </a>
+      <span class="topbar-divider"></span>
+      <a href="tel:+972524721375" class="topbar-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        052-472-1375
+      </a>
+    </div>
+    <div class="topbar-tag">איכות. אמינות. גימור ללא פשרות.</div>
+  </div>
+</div>
+
+<!-- ===== HEADER ===== -->
+<header class="header" id="header">
+  <div class="container header-inner">
+    <a href="#hero" class="logo">
+      <img src="assets/logo.jpg" alt="CDS פרויקטים">
+      <div class="logo-text">
+        <div class="logo-name">CDS פרויקטים</div>
+        <div class="logo-sub">ארונות פח · שילוט · רפפות</div>
+      </div>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#hero">בית</a>
+      <a href="#services">שירותים</a>
+      <a href="#about">אודות</a>
+      <a href="#gallery">פרויקטים</a>
+      <a href="#clients">לקוחות</a>
+      <a href="#contact">צור קשר</a>
+    </nav>
+    <div class="header-cta">
+      <a href="#contact" class="btn btn-gold">קבלת הצעת מחיר</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="תפריט">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+  </div>
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <h1 class="hero-title">
+        ארונות פח ושילוט<br>
+        <span class="gold">לבניינים בישראל</span>
+      </h1>
+      <p class="hero-lede">
+        תכנון, ייצור והתקנה של ארונות פח לחדרי חשמל, רפפות, מערכות שילוט וחיפויי פח —
+        בגימור אסתטי וברמה הנדסית הגבוהה ביותר.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-gold btn-lg">
+          לקבלת הצעת מחיר
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        </a>
+        <a href="#services" class="btn btn-ghost btn-lg">לשירותים שלנו</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-num">14<span>ימים</span></div><div class="stat-label">זמן אספקה</div></div>
+        <div class="stat-divider"></div>
+        <!-- <div class="stat"><div class="stat-num">100%<span></span></div><div class="stat-label">פתרון מותאם</div></div> -->
+        <!-- <div class="stat-divider"></div> -->
+        <div class="stat"><div class="stat-num" style="font-size:22px">פריסה ארצית</div><div class="stat-label">אספקה לכל פרויקט, בכל מקום</div></div>
+        <div class="stat-divider"></div>
+        <!-- <div class="stat"><div class="stat-num" style="font-size:18px">אספקת מוצרים</div><div class="stat-label">באיכות הגבוהה ביותר</div></div> -->
+        <!-- <div class="stat-divider"></div> -->
+        <div class="stat"><div class="stat-num" style="font-size:18px">שירות ללא פשרות</div><div class="stat-label">תודעת שירות מהגבוהות בענף בישראל</div></div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-shield">
+        <img src="assets/logo.jpg" alt="">
+      </div>
+      <div class="hero-card hero-card-1">
+        <div class="hero-card-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg>
+        </div>
+        <div>
+          <div class="hero-card-title">תקן חשמל מלא</div>
+          <div class="hero-card-sub">עומד בכל דרישות חברת החשמל</div>
+        </div>
+      </div>
+      <div class="hero-card hero-card-2">
+        <div class="hero-card-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 7v6c0 5 3.5 9.4 8 11 4.5-1.6 8-6 8-11V7l-8-5z"/></svg>
+        </div>
+        <div>
+          <div class="hero-card-title">אחריות מלאה</div>
+          <div class="hero-card-sub">חוזק, בידוד וגימור לאורך שנים</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STRIP ===== -->
+<section class="strip">
+  <div class="container strip-inner">
+    <span>ארונות חשמל</span><span class="dot">●</span>
+    <span>חיפוי פח</span><span class="dot">●</span>
+    <span>רפפות</span><span class="dot">●</span>
+    <span>מערכות שילוט</span><span class="dot">●</span>
+    <span>שילוט בניינים</span><span class="dot">●</span>
+    <span>פרויקטים מותאמים</span><span class="dot">●</span>
+    <span>ארונות חשמל</span><span class="dot">●</span>
+    <span>חיפוי פח</span><span class="dot">●</span>
+    <span>רפפות</span><span class="dot">●</span>
+    <span>מערכות שילוט</span><span class="dot">●</span>
+    <span>שילוט בניינים</span><span class="dot">●</span>
+    <span>פרויקטים מותאמים</span>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title">שלושה שלבים. <span class="gold">תוצאה אחת.</span></h2>
+      <p class="section-lede">ליווי מלא מהמדידה הראשונית ועד מסירת הפרויקט — תיאום מול כל גורמי המקצוע.</p>
+    </div>
+    <div class="services-grid">
+      <article class="service-card">
+        <div class="service-num">01</div>
+        <div class="service-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 22h20"/><path d="M3 22V8l9-6 9 6v14"/><path d="M9 22V12h6v10"/><circle cx="12" cy="8" r="1.5"/></svg>
+        </div>
+        <h3>ייעוץ ומדידה</h3>
+        <p>צוות המומחים של CDS מגיע לשטח, לוקח מידות מדויקות ומתכנן פתרון מותאם בדיוק לפרויקט שלכם  כולל ייעוץ הנדסי ובחירת חומרים.</p>
+        <ul class="service-list">
+          <li>סיור באתר ומדידת שטח</li>
+          <li>תכנון הנדסי ושרטוטים</li>
+          <li>בחירת גוונים וגימורים</li>
+        </ul>
+      </article>
+      <article class="service-card service-card-feature">
+        <div class="service-num">02</div>
+        <div class="service-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="13" height="12" rx="1"/><path d="M16 10h4l3 3v5h-7"/><circle cx="7" cy="20" r="2"/><circle cx="18" cy="20" r="2"/></svg>
+        </div>
+        <h3>אספקה</h3>
+        <p>מועד אספקה הוא עד 14 ימי עסקים — לא כולל הזמנות מיוחדות. כל המוצרים מיוצרים במפעל שלנו תחת בקרת איכות מלאה.</p>
+        <ul class="service-list">
+          <li>ייצור פנימי בבקרת איכות</li>
+          <li>עד 14 ימי עסקים</li>
+          <li>הובלה מאובטחת לאתר</li>
+        </ul>
+      </article>
+      <article class="service-card">
+        <div class="service-num">03</div>
+        <div class="service-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3>התקנה</h3>
+        <p>המתקינים שלנו מגיעים בתיאום מראש להתקנה הנדרשת — בעבודה נקייה, מסודרת ובסטנדרט גבוה. תיאום מלא מול קבלן ראשי וגורמי המקצוע.</p>
+        <ul class="service-list">
+          <li>תיאום מלא עם קבלן ראשי</li>
+          <li>התקנה מקצועית ומהירה</li>
+          <li>ניקיון ומסירת אתר</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="section section-dark" id="about">
+  <div class="container about-grid">
+    <div class="about-visual">
+      <div class="about-frame">
+        <div class="about-frame-shape">
+          <img src="uploads/WhatsApp Image 2026-05-08 at 18.18.06 (2).jpeg"
+               alt="פרויקט CDS בפועל" loading="lazy">
+        </div>
+      </div>
+    </div>
+    <div class="about-copy">
+      <h2 class="section-title">סוד הקסם שלנו <br><span class="gold">השילוב המושלם.</span></h2>
+      <p class="about-text">
+        חברת CDS פרויקטים הינה חברה מובילה בתחום ארונות הפח ושילוט לבניינים בישראל.
+        חברתנו עוסקת בשיווק, התקנה וחיפוי פח ללוחות חשמל, רפפות, מערכות וכל סוגי השילוט לבניינים.
+      </p>
+      <p class="about-text">
+        בין לקוחותינו נמנים מוסדות ציבוריים, בנייני מגורים, משרדים, קופות ובתי חולים, בתי מלון, עיריות, מועצות מקומיות ועוד.
+        סוד הקסם שלנו הוא השילוב המושלם בין איכות, חוזק ורמת בידוד גבוהה  לבין יופי, אסתטיקה ועיצוב.
+      </p>
+      <div class="about-features">
+        <div class="about-feature">
+          <div class="about-feature-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+          </div>
+          <div>
+            <div class="about-feature-title">ניסיון מוכח</div>
+            <div class="about-feature-sub">פרויקטים בקנה מידה ארצי</div>
+          </div>
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+          </div>
+          <div>
+            <div class="about-feature-title">תיאום מלא</div>
+            <div class="about-feature-sub">מול קבלנים ויועצים</div>
+          </div>
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+          </div>
+          <div>
+            <div class="about-feature-title">תקן חשמל</div>
+            <div class="about-feature-sub">עומד בדרישות הרגולציה</div>
+          </div>
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+          </div>
+          <div>
+            <div class="about-feature-title">אחריות</div>
+            <div class="about-feature-sub">שירות לאחר התקנה</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALLERY ===== -->
+<section class="section" id="gallery">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title">מבחר עבודות <span class="gold">מהשטח</span></h2>
+      <p class="section-lede">פרויקטים שביצענו עבור חברות נדל״ן, מוסדות ציבוריים ולקוחות פרטיים — אותו סטנדרט גימור, בכל היקף.</p>
+    </div>
+    <div class="gallery-grid">
+      <figure class="gallery-item">
+        <img src="uploads/WhatsApp Image 2026-05-08 at 18.18.06 (2).jpeg" alt="ארון פח עם חיפוי HPL — פרויקט בפועל" loading="lazy">
+        <figcaption>
+          <span class="gallery-tag">פרויקט בפועל</span>
+          <span class="gallery-name">ארון פח עם חיפוי — מגדל מגורים</span>
+        </figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <img src="uploads/ארון פח - משקוף נסתר.png" alt="ארון פח משקוף נסתר" loading="lazy">
+        <figcaption>
+          <span class="gallery-tag">ארון פח</span>
+          <span class="gallery-name">ארון פח — משקוף נסתר</span>
+        </figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <img src="uploads/ארון פח אטום לתקשורת חוץ.png" alt="ארון פח אטום לתקשורת חוץ" loading="lazy">
+        <figcaption>
+          <span class="gallery-tag">תקשורת חוץ</span>
+          <span class="gallery-name">ארון פח אטום לתקשורת חוץ</span>
+        </figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <img src="uploads/רפפה.png" alt="רפפה סטנדרטית" loading="lazy">
+        <figcaption>
+          <span class="gallery-tag">רפפה</span>
+          <span class="gallery-name">רפפה סטנדרטית</span>
+        </figcaption>
+      </figure>
+      <figure class="gallery-item gallery-item-tall">
+        <img src="uploads/ארון פח מחורר לגמל מים.png" alt="ארון פח מחורר לגמל מים" loading="lazy">
+        <figcaption>
+          <span class="gallery-tag">אינסטלציה</span>
+          <span class="gallery-name">ארון פח מחורר לגמל מים</span>
+        </figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <img src="uploads/ארון פח סטדרנט משקוף הלבשה.png" alt="ארון פח סטנדרט משקוף הלבשה" loading="lazy">
+        <figcaption>
+          <span class="gallery-tag">ארון פח</span>
+          <span class="gallery-name">ארון פח סטנדרט — משקוף הלבשה</span>
+        </figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <img src="uploads/רפפה לגמל מים.png" alt="רפפה לגמל מים" loading="lazy">
+        <figcaption>
+          <span class="gallery-tag">אינסטלציה</span>
+          <span class="gallery-name">רפפה לגמל מים</span>
+        </figcaption>
+      </figure>
+      <figure class="gallery-item gallery-video-item" id="galleryVideoThumb">
+        <video src="uploads/WhatsApp Video 2026-05-08 at 18.18.05.mp4" preload="metadata" muted></video>
+        <div class="gallery-play-btn" aria-hidden="true">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <figcaption>
+          <span class="gallery-tag">וידאו</span>
+          <span class="gallery-name">סרטון עבודות בשטח — לחץ להפעלה</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CLIENTS ===== -->
+<section class="section section-dark" id="clients">
+  <div class="container">
+    <div class="section-head section-head-center">
+      <h2 class="section-title">סומכים עלינו <span class="gold">לפרויקטים שלא טועים בהם.</span></h2>
+      <p class="section-lede">בין לקוחותינו: גופים ציבוריים, חברות נדל"ן מובילות ומוסדות עם דרישות גבוהות במיוחד.</p>
+    </div>
+    <div class="clients-grid">
+      <div class="client-card"><img src="uploads/נתב''ג - לוגו.png" alt="רשות שדות התעופה בישראל"></div>
+      <div class="client-card"><img src="uploads/צה''ל - לוגו מעודכן.jfif" alt="צה״ל"></div>
+      <div class="client-card"><img src="uploads/קבוצת שמיר הנדסה - לוגו.png" alt="קבוצת שמיר הנדסה"></div>
+      <div class="client-card client-card-burgundy"><img src="uploads/אחוזת רובינשטיין - לוגו.png" alt="אחוזת רובינשטיין"></div>
+      <div class="client-card"><img src="uploads/גרין מבנים - לוגו.png" alt="גרין מבנים"></div>
+      <div class="client-card"><img src="uploads/קפה לנדוור - לוגו מעודכן.png" alt="קפה לנדוור"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="section section-contact" id="contact">
+  <div class="container contact-grid">
+    <div class="contact-info">
+      <h2 class="section-title">בואו נבנה<br><span class="gold">את הפרויקט הבא ביחד.</span></h2>
+      <p class="contact-lede">דברו איתנו ישירות או השאירו פרטים למענה מהיר תוך יום עסקים.</p>
+
+      <div class="contact-channels">
+        <a href="https://wa.me/972524721375" target="_blank" rel="noopener" class="contact-channel">
+          <div class="contact-channel-icon contact-channel-wa">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.83 9.83 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>
+          </div>
+          <div>
+            <div class="contact-channel-label">WhatsApp</div>
+            <div class="contact-channel-value">052-472-1375</div>
+          </div>
+        </a>
+        <a href="tel:+972524721375" class="contact-channel">
+          <div class="contact-channel-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <div class="contact-channel-label">טלפון</div>
+            <div class="contact-channel-value">052-472-1375</div>
+          </div>
+        </a>
+        <a href="mailto:cdsprojects1@gmail.com" class="contact-channel">
+          <div class="contact-channel-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          </div>
+          <div>
+            <div class="contact-channel-label">אימייל</div>
+            <div class="contact-channel-value">cdsprojects1@gmail.com</div>
+          </div>
+        </a>
+        <a href="https://www.facebook.com/CDSPROJECTSCOIL/" target="_blank" rel="noopener" class="contact-channel">
+          <div class="contact-channel-icon contact-channel-fb">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+          </div>
+          <div>
+            <div class="contact-channel-label">פייסבוק</div>
+            <div class="contact-channel-value">CDS Projects</div>
+          </div>
+        </a>
+        <a href="https://maps.google.com/?q=משה+ברזני+35+קריית+גת" target="_blank" rel="noopener" class="contact-channel">
+          <div class="contact-channel-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="contact-channel-label">כתובת</div>
+            <div class="contact-channel-value">משה ברזני 35, קריית גת</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <form class="contact-form" id="contactForm" action="https://formsubmit.co/cdsprojects1@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="פניה חדשה מאתר CDS פרויקטים">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="#contact-success">
+      <input type="text" name="_honey" style="display:none">
+
+      <div class="form-head">
+        <h3>שליחת פנייה</h3>
+        <p>נחזור אליכם בהקדם — בדרך כלל תוך יום עסקים אחד.</p>
+      </div>
+
+      <div class="form-row form-row-2">
+        <label class="field">
+          <span class="field-label">שם מלא <em>*</em></span>
+          <input type="text" name="שם" required placeholder="ישראל ישראלי">
+        </label>
+        <label class="field">
+          <span class="field-label">טלפון <em>*</em></span>
+          <input type="tel" name="טלפון" required placeholder="050-0000000">
+        </label>
+      </div>
+
+      <div class="form-row form-row-2">
+        <label class="field">
+          <span class="field-label">אימייל</span>
+          <input type="email" name="אימייל" placeholder="name@example.com">
+        </label>
+        <label class="field">
+          <span class="field-label">נושא הפנייה <em>*</em></span>
+          <select name="נושא" required>
+            <option value="" disabled selected>בחרו נושא</option>
+            <option value="ארונות פח / לוחות חשמל">ארונות פח / לוחות חשמל</option>
+            <option value="חיפוי פח">חיפוי פח</option>
+            <option value="רפפות">רפפות</option>
+            <option value="מערכות שילוט">מערכות שילוט</option>
+            <option value="פרויקט מותאם אישית">פרויקט מותאם אישית</option>
+            <option value="אחר">אחר</option>
+          </select>
+        </label>
+      </div>
+
+      <label class="field">
+        <span class="field-label">פירוט הבקשה <em>*</em></span>
+        <textarea name="הודעה" rows="5" required placeholder="ספרו לנו על הפרויקט: היקף, מיקום, לוחות זמנים, וכל פרט רלוונטי..."></textarea>
+      </label>
+
+      <button type="submit" class="btn btn-gold btn-lg btn-block">
+        שליחת הפנייה
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+      </button>
+
+      <div class="form-success" id="contact-success">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
+        <span>הפנייה נשלחה בהצלחה. נחזור אליכם בקרוב!</span>
+      </div>
+      <p class="form-hint">בלחיצה על "שליחה" אתם מאשרים שנחזור אליכם בנושא הפנייה.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="assets/logo.jpg" alt="CDS פרויקטים">
+      <div>
+        <div class="footer-name">CDS פרויקטים</div>
+        <div class="footer-tag">ארונות פח · שילוט · רפפות לבניינים</div>
+      </div>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4>ניווט</h4>
+        <a href="#services">שירותים</a>
+        <a href="#about">אודות</a>
+        <a href="#gallery">פרויקטים</a>
+        <a href="#clients">לקוחות</a>
+        <a href="#contact">צור קשר</a>
+      </div>
+      <div class="footer-col">
+        <h4>יצירת קשר</h4>
+        <a href="tel:+972524721375">052-472-1375</a>
+        <a href="mailto:cdsprojects1@gmail.com">cdsprojects1@gmail.com</a>
+        <a href="https://wa.me/972524721375" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://www.facebook.com/CDSPROJECTSCOIL/" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://maps.google.com/?q=משה+ברזני+35+קריית+גת" target="_blank" rel="noopener">משה ברזני 35, קריית גת</a>
+      </div>
+      <div class="footer-col">
+        <h4>תחומי פעילות</h4>
+        <span>ארונות פח ולוחות חשמל</span>
+        <span>חיפוי פח לבניינים</span>
+        <span>רפפות ומערכות מיזוג</span>
+        <span>מערכות שילוט</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <span>© 2026 CDS פרויקטים. כל הזכויות שמורות.</span>
+      <span class="footer-credit">עיצוב ובנייה — אתר חברה</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== LIGHTBOX ===== -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="תצוגת תמונה">
+  <button class="lightbox-close" id="lightboxClose" aria-label="סגור">✕</button>
+  <img src="" alt="" id="lightboxImg" class="lightbox-media">
+</div>
+
+<!-- ===== VIDEO MODAL ===== -->
+<div class="video-modal" id="videoModal" role="dialog" aria-modal="true" aria-label="נגן וידאו">
+  <button class="modal-close" id="videoModalClose" aria-label="סגור">✕</button>
+  <video id="modalVideo" controls>
+    <source src="uploads/WhatsApp Video 2026-05-08 at 18.18.05.mp4" type="video/mp4">
+  </video>
+</div>
+
+<!-- ===== FLOATING WHATSAPP ===== -->
+<a href="https://wa.me/972524721375" target="_blank" rel="noopener" class="float-wa" aria-label="WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.83 9.83 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>
+</a>
+
+<script>
+// ===== Mobile menu =====
+const menuToggle = document.getElementById('menuToggle');
+const nav = document.getElementById('nav');
+if (menuToggle) {
+  menuToggle.addEventListener('click', () => nav.classList.toggle('is-open'));
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('is-open')));
+}
+
+// ===== Sticky header glow on scroll =====
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 30) header.style.background = 'rgba(5, 5, 5, 0.95)';
+  else header.style.background = 'rgba(10, 10, 10, 0.85)';
+}, { passive: true });
+
+// ===== Smooth scroll offset for anchor links =====
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const id = a.getAttribute('href');
+    if (id === '#' || id.length < 2) return;
+    const el = document.querySelector(id);
+    if (!el) return;
+    e.preventDefault();
+    const top = el.getBoundingClientRect().top + window.scrollY - 70;
+    window.scrollTo({ top, behavior: 'smooth' });
+  });
+});
+
+// ===== Reveal on scroll =====
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if (en.isIntersecting) {
+      en.target.classList.add('is-visible');
+      observer.unobserve(en.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.service-card, .client-card, .gallery-item, .about-feature, .contact-channel').forEach(el => observer.observe(el));
+
+// ===== Form submission feedback =====
+const form = document.getElementById('contactForm');
+if (form) {
+  form.addEventListener('submit', () => {
+    const success = document.getElementById('contact-success');
+    setTimeout(() => { if (success) success.classList.add('is-visible'); }, 100);
+  });
+}
+
+// ===== Lightbox =====
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxClose = document.getElementById('lightboxClose');
+
+document.querySelectorAll('.gallery-item:not(.gallery-video-item)').forEach(item => {
+  item.addEventListener('click', () => {
+    const img = item.querySelector('img');
+    if (!img) return;
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightbox.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+lightboxClose.addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+
+function closeLightbox() {
+  lightbox.classList.remove('is-open');
+  document.body.style.overflow = '';
+}
+
+// ===== Video modal =====
+const videoModal = document.getElementById('videoModal');
+const modalVideo = document.getElementById('modalVideo');
+const videoModalClose = document.getElementById('videoModalClose');
+const videoThumb = document.getElementById('galleryVideoThumb');
+
+if (videoThumb) {
+  videoThumb.addEventListener('click', () => {
+    videoModal.classList.add('is-open');
+    modalVideo.play();
+    document.body.style.overflow = 'hidden';
+  });
+}
+
+videoModalClose.addEventListener('click', closeVideoModal);
+videoModal.addEventListener('click', e => { if (e.target === videoModal) closeVideoModal(); });
+
+function closeVideoModal() {
+  videoModal.classList.remove('is-open');
+  modalVideo.pause();
+  modalVideo.currentTime = 0;
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { closeLightbox(); closeVideoModal(); }
+});
+
+</script>
+</body>
+</html>
