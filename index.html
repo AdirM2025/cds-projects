@@ -627,6 +627,22 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .client-card-landover { background: #2e5a1a; }
 .client-card-burgundy { background: #6b1f2c; }
 
+/* Clients marquee — mobile only */
+.clients-marquee { display: none; overflow: hidden; }
+.clients-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: max-content;
+  animation: marquee 22s linear infinite;
+}
+.clients-marquee-track .client-card {
+  width: 110px;
+  flex-shrink: 0;
+  aspect-ratio: 1.4 / 1;
+  padding: 14px;
+}
+
 /* ===== Contact ===== */
 .section-contact {
   background: linear-gradient(180deg, var(--bg-light) 0%, #ebe5d5 100%);
@@ -942,7 +958,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .form-row-2 { grid-template-columns: 1fr; }
   .footer-cols { grid-template-columns: 1fr 1fr; }
   .gallery-item-wide { grid-column: span 2; }
-  .clients-grid { grid-template-columns: repeat(2, 1fr); }
+  .clients-grid { display: none; }
+  .clients-marquee { display: block; }
   .contact-form { padding: 28px 22px; }
   .topbar-contact { gap: 10px; font-size: 12px; }
   .footer-bottom-inner { flex-direction: column; gap: 8px; text-align: center; }
@@ -1275,6 +1292,31 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       <div class="client-card client-card-burgundy"><img src="uploads/אחוזת רובינשטיין - לוגו.png" alt="אחוזת רובינשטיין"></div>
       <div class="client-card"><img src="uploads/גרין מבנים - לוגו.png" alt="גרין מבנים"></div>
       <div class="client-card"><img src="uploads/קפה לנדוור - לוגו מעודכן.png" alt="קפה לנדוור"></div>
+      <div class="client-card"><img src="uploads/BST-50years-logo.png" alt="BST"></div>
+      <div class="client-card"><img src="uploads/קבוצת מנרב.png" alt="קבוצת מנרב"></div>
+      <div class="client-card"><img src="uploads/Barel_Logo.png" alt="Barel_Logo"></div>
+    </div>
+    <div class="clients-marquee">
+      <div class="clients-marquee-track">
+        <div class="client-card"><img src="uploads/נתב''ג - לוגו.png" alt="רשות שדות התעופה בישראל"></div>
+        <div class="client-card"><img src="uploads/צה''ל - לוגו מעודכן.jfif" alt="צה״ל"></div>
+        <div class="client-card"><img src="uploads/קבוצת שמיר הנדסה - לוגו.png" alt="קבוצת שמיר הנדסה"></div>
+        <div class="client-card client-card-burgundy"><img src="uploads/אחוזת רובינשטיין - לוגו.png" alt="אחוזת רובינשטיין"></div>
+        <div class="client-card"><img src="uploads/גרין מבנים - לוגו.png" alt="גרין מבנים"></div>
+        <div class="client-card"><img src="uploads/קפה לנדוור - לוגו מעודכן.png" alt="קפה לנדוור"></div>
+        <div class="client-card"><img src="uploads/BST-50years-logo.png" alt="BST"></div>
+        <div class="client-card"><img src="uploads/קבוצת מנרב.png" alt="קבוצת מנרב"></div>
+        <div class="client-card"><img src="uploads/Barel_Logo.png" alt="Barel_Logo"></div>
+        <div class="client-card"><img src="uploads/נתב''ג - לוגו.png" alt="רשות שדות התעופה בישראל"></div>
+        <div class="client-card"><img src="uploads/צה''ל - לוגו מעודכן.jfif" alt="צה״ל"></div>
+        <div class="client-card"><img src="uploads/קבוצת שמיר הנדסה - לוגו.png" alt="קבוצת שמיר הנדסה"></div>
+        <div class="client-card client-card-burgundy"><img src="uploads/אחוזת רובינשטיין - לוגו.png" alt="אחוזת רובינשטיין"></div>
+        <div class="client-card"><img src="uploads/גרין מבנים - לוגו.png" alt="גרין מבנים"></div>
+        <div class="client-card"><img src="uploads/קפה לנדוור - לוגו מעודכן.png" alt="קפה לנדוור"></div>
+        <div class="client-card"><img src="uploads/BST-50years-logo.png" alt="BST"></div>
+        <div class="client-card"><img src="uploads/קבוצת מנרב.png" alt="קבוצת מנרב"></div>
+        <div class="client-card"><img src="uploads/Barel_Logo.png" alt="Barel_Logo"></div>
+      </div>
     </div>
   </div>
 </section>
